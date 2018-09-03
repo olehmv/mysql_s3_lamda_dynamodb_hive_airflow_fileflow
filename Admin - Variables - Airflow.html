@@ -1,0 +1,1451 @@
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Admin - Variables - Airflow</title>
+    
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    
+    
+  
+        <link href="Admin%20-%20Variables%20-%20Airflow_files/bootstrap.css" rel="stylesheet">
+        <link href="Admin%20-%20Variables%20-%20Airflow_files/bootstrap-theme_002.css" rel="stylesheet">
+        <link href="Admin%20-%20Variables%20-%20Airflow_files/admin.css" rel="stylesheet">
+        <style>
+        body {
+            padding-top: 4px;
+        }
+        </style>
+    
+  <link href="Admin%20-%20Variables%20-%20Airflow_files/bootstrap-theme.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="http://localhost:8080/static/pin_30.png">
+  <link rel="stylesheet" type="text/css" href="Admin%20-%20Variables%20-%20Airflow_files/main.css">
+
+    
+    
+    
+    
+  <link href="Admin%20-%20Variables%20-%20Airflow_files/select2.css" rel="stylesheet">
+  <link href="Admin%20-%20Variables%20-%20Airflow_files/select2-bootstrap3.css" rel="stylesheet">
+  <link href="Admin%20-%20Variables%20-%20Airflow_files/daterangepicker-bs3.css" rel="stylesheet">
+  
+  
+
+
+    
+    
+  </head>
+  <body>
+    
+<div class="container">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#admin-navbar-collapse">
+          <span class="sr-only" data-original-title="" title="">Toggle navigation</span>
+          <span class="icon-bar" data-original-title="" title=""></span>
+          <span class="icon-bar" data-original-title="" title=""></span>
+          <span class="icon-bar" data-original-title="" title=""></span>
+        </button>
+          <a class="navbar-brand" rel="home" href="http://localhost:8080/admin/" style="cursor: pointer;">
+              <img style="float: left; width:35px; margin-top: -7px;" src="Admin%20-%20Variables%20-%20Airflow_files/pin_100.png" title="">
+              <span data-original-title="" title="">Airflow</span>
+          </a>
+      </div>
+      <!-- navbar content -->
+      <div class="collapse navbar-collapse" id="admin-navbar-collapse">
+        
+        <ul class="nav navbar-nav">
+          
+  
+        <li>
+          <a href="http://localhost:8080/admin/">DAGs</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+            Data Profiling<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="http://localhost:8080/admin/queryview/">Ad Hoc Query</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/chart/">Charts</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/knownevent/">Known Events</a>
+            </li>
+          </ul>
+        </li>
+      
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+            Browse<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="http://localhost:8080/admin/slamiss/">SLA Misses</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/taskinstance/">Task Instances</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/log/">Logs</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/basejob/">Jobs</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/dagrun/">DAG Runs</a>
+            </li>
+          </ul>
+        </li>
+      
+        
+        <li class="active dropdown">
+        
+          <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+            Admin<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="http://localhost:8080/admin/pool/">Pools</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/configurationview/">Configuration</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/user/">Users</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/connection/">Connections</a>
+            </li>
+            <li class="active">
+            
+              <a href="http://localhost:8080/admin/variable/">Variables</a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/admin/xcom/">XComs</a>
+            </li>
+          </ul>
+        </li>
+      
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+            Docs<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="http://pythonhosted.org/airflow/">Documentation</a>
+            </li>
+            <li>
+              <a href="https://github.com/airbnb/airflow">Github</a>
+            </li>
+          </ul>
+        </li>
+      
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+            About<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="http://localhost:8080/admin/versionview/">Version</a>
+            </li>
+          </ul>
+        </li>
+      
+
+        </ul>
+        
+
+        
+        <ul class="nav navbar-right">
+          
+  
+  
+
+        </ul>
+        
+        <!-- clock and logout -->
+        <ul class="nav navbar-nav navbar-right">
+            <li><a id="clock" class="jqclock"><span class="clocktime">11:44 UTC</span></a></li>
+            
+              <li><a href="http://localhost:8080/admin/airflow/logout"><span data-toggle="tooltip" data-placement="left" title="" class="glyphicon glyphicon-off" data-original-title="Logout"></span></a></li>
+            
+        </ul>
+          <ul class="nav navbar-nav navbar-right">
+              <li><a id="clock"></a></li>
+          </ul>
+      </div>
+      </div>
+</nav>
+  
+  
+  
+    
+      
+        
+        
+        
+        <div class="alert alert-success alert-dismissable">
+        
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          Record was successfully saved.
+        </div>
+      
+    
+  
+
+  
+
+  
+  
+  
+    
+  
+    <h2>Variables</h2>
+  
+  <form class="form-inline" action="/admin/airflow/varimport" method="post" enctype="multipart/form-data" style="margin-top: 50px;">
+    
+    <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+    
+    <input class="form-control" name="file" type="file">
+    <input class="btn btn-default" value="Import Variables" type="submit">
+  </form>
+  <hr>
+  
+    <ul class="nav nav-tabs actions-nav">
+        <li class="active">
+            <a href="javascript:void(0)">List (17)</a>
+        </li>
+
+        
+        <li>
+            <a href="http://localhost:8080/admin/variable/new/?url=%2Fadmin%2Fvariable%2F" title="Create New Record">Create</a></li>
+        
+
+        
+
+        
+
+        
+        <li class="dropdown">
+            
+    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+        Add Filter<b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu field-filters">
+        
+        <li>
+            <a href="javascript:void(0)" class="filter" onclick="return false;">Key</a>
+        </li>
+        
+        <li>
+            <a href="javascript:void(0)" class="filter" onclick="return false;">Val</a>
+        </li>
+        
+    </ul>
+
+        </li>
+        
+
+        
+        <li class="dropdown">
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">With selected<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        
+        <li>
+            <a href="javascript:void(0)" onclick="return modelActions.execute('delete');">Delete</a>
+        </li>
+        
+        <li>
+            <a href="javascript:void(0)" onclick="return modelActions.execute('varexport');">Export</a>
+        </li>
+        
+    </ul>
+
+        </li>
+        
+
+        
+        <li>
+            
+<form method="GET" action="/admin/variable/" class="navbar-form navbar-left" role="search">
+    
+    
+    
+    <div class="form-group">
+        <input name="search" class="col-md-2 form-control" placeholder="Search" type="text">
+    </div>
+    
+</form>
+
+        </li>
+        
+        
+    </ul>
+    
+
+
+    
+        
+    <form id="filter_form" method="GET" action="/admin/variable/">
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary" style="display: none">Apply</button>
+            
+        </div>
+
+        <table class="filters"></table>
+    </form>
+    <div class="clearfix"></div>
+
+        <div class="clearfix"></div>
+    
+
+    
+    <table class="table table-striped table-bordered table-hover model-list">
+        <thead>
+            <tr>
+                
+                    
+                    <th class="list-checkbox-column">
+                        <input name="rowtoggle" class="action-rowtoggle" title="Select all records" type="checkbox">
+                    </th>
+                    
+                    
+                        
+                        <th class="col-md-1">&nbsp;</th>
+                        
+                    
+                    
+                    
+                    <th class="column-header col-key">
+                        
+                            
+                                <a href="http://localhost:8080/admin/variable/?sort=0" title="Sort by Key">Key</a>
+                            
+                        
+                        
+                    </th>
+                    
+                    
+                    <th class="column-header col-val">
+                        
+                            
+                                <a href="http://localhost:8080/admin/variable/?sort=1" title="Sort by Val">Val</a>
+                            
+                        
+                        
+                    </th>
+                    
+                    
+                    <th class="column-header col-is_encrypted">
+                        
+                            
+                                <a href="http://localhost:8080/admin/variable/?sort=2" title="Sort by Is Encrypted">Is Encrypted</a>
+                            
+                        
+                        
+                    </th>
+                    
+                    
+                
+            </tr>
+        </thead>
+        
+        <tbody><tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="1" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=1" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="1" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    sql
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    select * from airflow.dag;
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="2" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=2" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="2" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    field_dict
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    {"dag_id":"string", "is_paused":"string", 
+"is_subdag":"string","is_active":"string","last_scheduler_run":"string","last_pickled":"string","last_expired":"string","scheduler_lock":"string","pickle_id":"string","fileloc":"string","owners":"string"}
+
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="3" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=3" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="3" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    mysql_conn_id
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    mysql_default
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="4" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=4" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="4" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    aws_access_key_id
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    AKIAJLLB6W7RSE6H4IXA
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="5" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=5" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="5" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    aws_secret_access_key
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    ********
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="6" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=6" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="6" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    aws_bucket_name
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    mysqls3lamdahive
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="7" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=7" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="7" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    hive_cli_conn_id
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    hive_cli_default
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="8" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=8" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="8" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    owner
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    airflow
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="9" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=9" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="9" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    start_date_year
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    2018
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="10" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=10" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="10" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    mysql_s3_hive_dag_id
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    mysql_s3_hive
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="11" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=11" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="11" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    write_mysql_s3_task_id
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    write_mysql_s3
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="12" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=12" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="12" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    write_s3_hive_task_id
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    write_s3_hive
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="13" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=13" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="13" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    schedule_interval
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    @once
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="14" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=14" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="14" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    start_date_month
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    8
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="15" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=15" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="15" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    start_date_day
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    31
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="16" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=16" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="16" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    start_date_hour
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    15
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+        <tr>
+            
+                
+                <td>
+                    <input name="rowid" class="action-checkbox" value="17" title="Select record" type="checkbox">
+                </td>
+                
+                
+                    
+                    <td class="list-buttons-column">
+                        
+                          
+                          
+  
+<a class="icon" href="http://localhost:8080/admin/variable/edit/?url=%2Fadmin%2Fvariable%2F&amp;id=17" title="Edit Record">
+  <span class="fa fa-pencil glyphicon glyphicon-pencil" data-original-title="" title=""></span>
+</a>
+
+
+                          
+                          
+<form class="icon" method="POST" action="/admin/variable/delete/">
+  <input id="id" name="id" required="" value="17" type="hidden">
+  <input id="url" name="url" value="/admin/variable/" type="hidden">
+  
+  <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+  
+  <button onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+    <span class="fa fa-trash glyphicon glyphicon-trash" data-original-title="" title=""></span>
+  </button>
+</form>
+
+                          
+                        
+                    </td>
+
+                
+                    <td class="col-key">
+                    
+                    start_date_minute
+                    
+                    </td>
+                
+                    <td class="col-val">
+                    
+                    12
+                    
+                    </td>
+                
+                    <td class="col-is_encrypted">
+                    
+                    <span class="fa fa-minus-circle glyphicon glyphicon-minus-sign icon-minus-sign" data-original-title="" title=""></span>
+                    
+                    </td>
+                
+            
+        </tr>
+        
+    </tbody></table>
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    <form id="action_form" action="/admin/variable/action/" method="POST" style="display: none">
+        
+        <input name="csrf_token" value="1535977196##60e45637a2845defa3fbe71ff22529c255caaacd" type="hidden">
+        
+        <input name="url" value="/admin/variable/" type="hidden">
+        <input id="action" name="action" type="hidden">
+    </form>
+    
+
+    
+
+</div>
+
+
+    
+
+    <script src="Admin%20-%20Variables%20-%20Airflow_files/jquery.js" type="text/javascript"></script>
+    <script src="Admin%20-%20Variables%20-%20Airflow_files/bootstrap.js" type="text/javascript"></script>
+    <script src="Admin%20-%20Variables%20-%20Airflow_files/moment.js" type="text/javascript"></script>
+    <script src="Admin%20-%20Variables%20-%20Airflow_files/select2.js" type="text/javascript"></script>
+    
+<script src="Admin%20-%20Variables%20-%20Airflow_files/jqClock.js" type="text/javascript"></script>
+<script>
+    x = new Date()
+    var UTCseconds = (x.getTime() + x.getTimezoneOffset()*60*1000);
+    $("#clock").clock({
+        "seconds":"false",
+        "calendar":"false",
+        "format":"24",
+        "timestamp":UTCseconds
+    }).click(function(){
+        alert('ubuntu-VirtualBox');
+    });
+    $('span').tooltip();
+</script>
+
+
+    
+    
+    
+    <script src="Admin%20-%20Variables%20-%20Airflow_files/filters.js"></script>
+    
+  
+  <script src="Admin%20-%20Variables%20-%20Airflow_files/daterangepicker.js"></script>
+  
+  <script src="Admin%20-%20Variables%20-%20Airflow_files/form.js"></script>
+
+
+    
+    
+    <script src="Admin%20-%20Variables%20-%20Airflow_files/actions.js"></script>
+    <script language="javascript">
+        var modelActions = new AdminModelActions("Please select at least one record.", {"delete": "Are you sure you want to delete selected records?"});
+    </script>
+    
+
+
+    <script language="javascript">
+        (function($) {
+            $('[data-role=tooltip]').tooltip({
+                html: true,
+                placement: 'bottom'
+            });
+            
+                var filter = new AdminFilters(
+                    '#filter_form', '.field-filters',
+                    {"Key": [{"arg": "0", "index": 0, "operation": "contains", "options": null, "type": null}, {"arg": "1", "index": 1, "operation": "not contains", "options": null, "type": null}, {"arg": "2", "index": 2, "operation": "equals", "options": null, "type": null}, {"arg": "3", "index": 3, "operation": "not equal", "options": null, "type": null}, {"arg": "4", "index": 4, "operation": "empty", "options": [["1", "Yes"], ["0", "No"]], "type": null}, {"arg": "5", "index": 5, "operation": "in list", "options": null, "type": "select2-tags"}, {"arg": "6", "index": 6, "operation": "not in list", "options": null, "type": "select2-tags"}], "Val": [{"arg": "7", "index": 7, "operation": "contains", "options": null, "type": null}, {"arg": "8", "index": 8, "operation": "not contains", "options": null, "type": null}, {"arg": "9", "index": 9, "operation": "equals", "options": null, "type": null}, {"arg": "10", "index": 10, "operation": "not equal", "options": null, "type": null}, {"arg": "11", "index": 11, "operation": "empty", "options": [["1", "Yes"], ["0", "No"]], "type": null}, {"arg": "12", "index": 12, "operation": "in list", "options": null, "type": "select2-tags"}, {"arg": "13", "index": 13, "operation": "not in list", "options": null, "type": "select2-tags"}]},
+                    []
+                );
+            
+        })(jQuery);
+    </script>
+
+  
+</body></html>
